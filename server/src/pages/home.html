@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title style="text-align: center">
+            The Geeks Chat Room
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form {ngSubmit ="submitPost()">
+        <div class="compost-post-area">
+            <ion-textarea class="post-compose" paceholder="Share your thoughts...." [(ngModel)]="post-content" name="content"></ion-textarea>
+            <button ion-button round class="tweet-post" type="submit">POST</button>
+        </div>
+    </form>
+</ion-content>
