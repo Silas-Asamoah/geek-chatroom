@@ -13,4 +13,46 @@
             <button ion-button round class="tweet-post" type="submit">POST</button>
         </div>
     </form>
+
+    <div>
+        <ion-card>
+            <ion-item>
+                <h3>Hi <i>@{{current_user }}</i></h3>
+                <h3>Friends ONline: {{ get_users_online() }}</h3>
+            </ion-item>
+        </ion-card>
+
+
+        <div *ngFor="let post of post_list">
+            <ion-card>
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="https://api.adorable.io/avatars/100/avatar.png" alt="something">
+                    </ion-avatar>
+                    <p>@{{post.username}} <i>{{ isOnline(post.username) }}</i></p>
+                </ion-item>
+
+                <ion-card-content>
+                    <p>{{post.content}}</p>
+                </ion-card-content>
+
+                <ion-row class="icons">
+                    <ion-col>
+                        <button ion-button ion-start clear small>
+                            <ion-icon name="repeat"></ion-icon>
+                            <div>&nbsp;932 reposts</div>
+                        </button>
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button ion-start clear small color="danger">
+                            <ion-icon name="heart"></ion-icon>
+                            <div>&nbsp;12k Likes</div>
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </div>
+    </div>
+
+
 </ion-content>
